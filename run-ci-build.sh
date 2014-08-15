@@ -6,7 +6,7 @@ source ~/.bashrc
 
 set -e
 
-bundle install --path=vendor/bundle
+bundle install
 
 bundle exec foodcritic .
 
