@@ -1,0 +1,16 @@
+---
+driver:
+  name: docker
+
+provisioner:
+  name: chef_solo
+  require_chef_omnibus: latest
+
+platforms:
+  - name: centos
+
+suites:
+  - name: default
+    run_list:
+      - recipe[ratpoison::default]
+    attributes:
