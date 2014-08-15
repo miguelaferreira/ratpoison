@@ -17,4 +17,11 @@ group :development do
   gem 'simplecov', :require => false, :group => :test
 end
 
-
+group :test do
+  gem 'berkshelf', github: 'berkshelf/berkshelf'
+  gem 'vagrant',   github: 'mitchellh/vagrant'
+  gem 'foodcritic', '>= 3.0'
+  gem 'chefspec', '>= 3.1'
+  gem 'rubocop'
+  gem 'simplecov', :require => false, :group => :test
+end

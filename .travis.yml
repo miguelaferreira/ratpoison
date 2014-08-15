@@ -1,0 +1,10 @@
+language: ruby
+bundler_args: --path vendor/bundler
+rvm:
+- 2.1.1
+before_install:
+- bundle install
+script:
+- bundle exec foodcritic .
+- bundle exec rubocop
+- bundle exec rspec
