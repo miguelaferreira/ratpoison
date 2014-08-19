@@ -55,7 +55,11 @@ Guardfile
 Procfile
 coverage/*
 .kitchen/*
+.kitchen.ci.yml
+.kitchen.yml
+.rubocop.yml
 run-ci-build.sh
+Thorfile
 
 # SCM #
 #######
@@ -100,4 +104,6 @@ Vagrantfile
 
 # Bundler #
 ###########
+Gemfile
+Gemfile.lock
 vendor/*

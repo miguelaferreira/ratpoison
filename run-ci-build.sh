@@ -2,7 +2,7 @@
 
 source ~/.bashrc
 
-/usr/local/rvm/bin/rvm --default use 2.1.1
+rvm --default use 2.1.1
 
 set -e
 
