@@ -42,5 +42,4 @@ describe 'ratpoison::windowmanager' do
     expect(chef_run.template(init_script_file)).to notify('service[ratpoison]')
       .to(:restart)
   end
-
 end
