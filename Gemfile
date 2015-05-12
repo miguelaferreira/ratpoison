@@ -3,19 +3,19 @@ source 'https://rubygems.org'
 group :development, :test do
   gem 'berkshelf', github: 'berkshelf/berkshelf'
   gem 'foodcritic', '>= 3.0'
-  gem 'chefspec', '>= 3.1'
+  gem 'chefspec',   '>= 3.1'
   gem 'rubocop'
   gem 'simplecov', :require => false, :group => :test
 end
 
 group :development do
-  gem 'vagrant',   github: 'mitchellh/vagrant'
+  gem 'vagrant', github: 'mitchellh/vagrant'
   gem 'test-kitchen'
   gem 'kitchen-vagrant'
   gem 'kitchen-docker'
   gem 'guard'
   gem 'guard-kitchen'
   gem 'guard-foodcritic', '>= 1.0'
-  gem 'guard-rspec', '>= 4.2'
+  gem 'guard-rspec',      '>= 4.2'
   gem 'guard-rubocop'
 end

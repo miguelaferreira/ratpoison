@@ -1,6 +1,6 @@
-source "https://api.berkshelf.com"
+source 'https://supermarket.getchef.com'
 
 metadata
 
 cookbook 'yum-epel'
-cookbook 'loco_xvfb'
+cookbook 'xvfb'

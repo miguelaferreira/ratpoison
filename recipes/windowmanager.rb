@@ -21,8 +21,6 @@ include_recipe 'yum-epel'
 
 package 'ratpoison'
 
-ratpoison_binary = '/usr/bin/ratpoison'
-
 template '/etc/init.d/ratpoison' do
   source 'ratpoison.init.d.erb'
   mode 00755
@@ -36,6 +34,5 @@ template '/etc/init.d/ratpoison' do
 end
 
 service 'ratpoison' do
-  pattern ratpoison_binary
   action [:start, :enable]
 end
