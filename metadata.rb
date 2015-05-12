@@ -8,5 +8,5 @@ version          '0.1.0'
 
 supports         'centos'
 
-depends          'yum-epel',  '>= 0.3.6'
-depends          'loco_xvfb', '>= 0.4.0'
+depends          'yum-epel', '>= 0.3.6'
+depends          'xvfb',     '>= 2.0.0'

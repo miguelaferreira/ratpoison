@@ -4,20 +4,20 @@ Installs the Ratpoison window manager for X11.
 
 The `default` recipe of this cookbook will install Xvfb
 to provide a X11 implementation for Ratpoison to run on.
-If you already have a X11 server running, use the 
+If you already have a X11 server running, use the
 `windowmanager` recipe that only installs and runs
 Ratpoison.
 
 Build
 -----
 
-[![Build Status](https://travis-ci.org/miguelaferreira/ratpoison_cookbook.svg?branch=setup-travis-ci)](https://travis-ci.org/miguelaferreira/ratpoison_cookbook)
+[![Build Status](https://travis-ci.org/miguelaferreira/ratpoison.svg?branch=setup-travis-ci)](https://travis-ci.org/miguelaferreira/ratpoison)
 
 Requirements
 ------------
 #### packages
-- `yum-epel`  - to provide the yum repositories
-- `loco-xvfb` - to provide a X11 implementation
+- `yum-epel` - to provide the yum repositories
+- `xvfb`     - to provide a X11 implementation
 
 Attributes
 ----------
@@ -25,8 +25,7 @@ Attributes
 Usage
 -----
 #### ratpoison::default
-Include `ratpoison` in your node's `run_list` to have
-Xvfb and Ratpoison installed and running.
+Include `ratpoison` in your node's `run_list` to have Xvfb and Ratpoison installed and running.
 
 ```json
 {
@@ -38,7 +37,7 @@ Xvfb and Ratpoison installed and running.
 ```
 
 #### ratpoison::windowmanager
-If you have a X11 implementation running on 
+If you have a X11 implementation running on
 your node, include `ratpoison::windowmanager` in your node's
 `run_list` to have Ratpoison installed and running.
 

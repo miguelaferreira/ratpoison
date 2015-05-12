@@ -17,5 +17,5 @@
 # limitations under the License.
 #
 
-include_recipe 'loco_xvfb'
+include_recipe 'xvfb'
 include_recipe 'ratpoison::windowmanager'

@@ -20,10 +20,10 @@ require 'chefspec'
 require_relative 'spec_helper'
 
 describe 'ratpoison::default' do
-  let(:chef_run) { ChefSpec::Runner.new.converge(described_recipe) }
+  let(:chef_run) { ChefSpec::ServerRunner.new.converge(described_recipe) }
 
-  it 'includes the loco_xvfb cookbook' do
-    expect(chef_run).to include_recipe('loco_xvfb')
+  it 'includes the xvfb cookbook' do
+    expect(chef_run).to include_recipe('xvfb')
   end
 
   it 'includes the ratpoison::windowmanager recipe' do
