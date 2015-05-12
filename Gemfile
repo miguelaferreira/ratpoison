@@ -9,13 +9,13 @@ group :development, :test do
 end
 
 group :development do
-  gem 'vagrant',   github: 'mitchellh/vagrant'
+  gem 'vagrant', github: 'mitchellh/vagrant'
   gem 'test-kitchen'
   gem 'kitchen-vagrant'
   gem 'kitchen-docker'
   gem 'guard'
   gem 'guard-kitchen'
   gem 'guard-foodcritic', '>= 1.0'
-  gem 'guard-rspec', '>= 4.2'
+  gem 'guard-rspec',      '>= 4.2'
   gem 'guard-rubocop'
 end
