@@ -1,8 +1,9 @@
 language: ruby
-bundler_args: --without development
 rvm:
   - 2.1.0
+env: KITCHEN_LOCAL_YAML=.kitchen.ci.yml
 script:
 - bundle exec foodcritic .
 - bundle exec rubocop
 - bundle exec rspec
+- bundle exec kitchen test
