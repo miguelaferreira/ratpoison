@@ -20,7 +20,7 @@ require 'chefspec'
 require_relative 'spec_helper'
 
 describe 'ratpoison::windowmanager' do
-  let(:chef_run) { ChefSpec::Runner.new.converge(described_recipe) }
+  let(:chef_run) { ChefSpec::ServerRunner.new.converge(described_recipe) }
 
   it 'includes the yum-epel cookbook' do
     expect(chef_run).to include_recipe('yum-epel')
