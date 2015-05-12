@@ -1,3 +1,9 @@
+AllCops:
+  Exclude:
+    - '**/Guardfile'
+    - '**/Gemfile'
+    - 'vendor/**/*'
+
 Style/SingleSpaceBeforeFirstArg:
   Exclude:
-    - metadata.rb
+    - '**/metadata.rb'
