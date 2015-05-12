@@ -1,13 +1,15 @@
 ---
 driver:
   name: docker
+  binary: docker
+  use_sudo: false
 
 provisioner:
-  name: chef_solo
+  name: chef_zero
   require_chef_omnibus: latest
 
 platforms:
-  - name: centos
+  - name: centos-6.6
 
 suites:
   - name: default
