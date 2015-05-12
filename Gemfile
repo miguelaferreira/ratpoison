@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 group :development, :test do
   gem 'berkshelf', github: 'berkshelf/berkshelf'
   gem 'foodcritic', '>= 3.0'
-  gem 'chefspec', '>= 3.1'
+  gem 'chefspec',   '>= 3.1'
   gem 'rubocop'
   gem 'simplecov', :require => false, :group => :test
 end
