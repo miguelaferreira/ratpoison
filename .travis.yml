@@ -1,5 +1,7 @@
 language: ruby
 bundler_args: --without development
+rvm:
+  - 2.1.5-p273
 script:
 - bundle exec foodcritic .
 - bundle exec rubocop
