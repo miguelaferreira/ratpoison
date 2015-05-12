@@ -3,6 +3,7 @@ rvm:
   - 2.1.0
 env: KITCHEN_LOCAL_YAML=.kitchen.ci.yml
 sudo: false
+cache: bundler
 script:
 - bundle exec foodcritic .
 - bundle exec rubocop
