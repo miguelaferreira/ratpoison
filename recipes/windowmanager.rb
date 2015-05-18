@@ -21,10 +21,10 @@ include_recipe 'yum-epel'
 
 remote_file node['ratpoison']['rpm']['file'] do
   source node['ratpoison']['rpm']['url']
-end if node['platform_version'].to_i > 6
+end if node['platform_version'].to_f >= 7.0
 
 package 'ratpoison' do
-  source node['ratpoison']['rpm']['file'] if node['platform_version'].to_i > 6
+  source node['ratpoison']['rpm']['file'] if node['platform_version'].to_f >= 7.0
 end
 
 template '/etc/init.d/ratpoison' do
