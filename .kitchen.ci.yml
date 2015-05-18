@@ -10,9 +10,13 @@ provisioner:
 
 platforms:
   - name: centos-6.6
+  - name: centos-7.1
 
 suites:
   - name: default
     run_list:
       - recipe[ratpoison::default]
     attributes:
+      ratpoison:
+        rpm:
+          url: https://copr-be.cloud.fedoraproject.org/results/shassard/ratpoison/epel-7-x86_64/ratpoison-1.4.8-1.el7.centos/ratpoison-1.4.8-1.el7.centos.x86_64.rpm

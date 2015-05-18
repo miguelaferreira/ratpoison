@@ -22,6 +22,10 @@ Requirements
 Attributes
 ----------
 
+The ratpoison pacckage is not available in Epel repository for CentOS 7.
+The cookbook provides the attribute `default['ratpoison']['rpm']['url']` and to specify the location where to download the ratpoison rpm from.
+This attribute is needed for CentOS verions above 6.
+
 Usage
 -----
 #### ratpoison::default

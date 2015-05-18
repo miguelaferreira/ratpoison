@@ -7,3 +7,7 @@ AllCops:
 Style/SingleSpaceBeforeFirstArg:
   Exclude:
     - '**/metadata.rb'
+
+Metrics/LineLength:
+  Max: 120
+
