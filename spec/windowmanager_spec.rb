@@ -45,6 +45,11 @@ describe 'ratpoison::windowmanager' do
       expect(chef_run.template(init_script_file)).to notify('service[ratpoison]')
         .to(:restart)
     end
+
+    it 'starts the ratpoison service' do
+      expect(chef_run).to start_service('ratpoison')
+      expect(chef_run).to enable_service('ratpoison')
+    end
   end
 
   context 'when installing on CentoOS 7.1' do
@@ -82,6 +87,11 @@ describe 'ratpoison::windowmanager' do
     it 'notifies ratpoison service to restart' do
       expect(chef_run.template(init_script_file)).to notify('service[ratpoison]')
         .to(:restart)
+    end
+
+    it 'starts the ratpoison service' do
+      expect(chef_run).to start_service('ratpoison')
+      expect(chef_run).to enable_service('ratpoison')
     end
   end
 end
