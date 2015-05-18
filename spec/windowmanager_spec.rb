@@ -19,10 +19,19 @@ require_relative 'spec_helper'
 
 describe 'ratpoison::windowmanager' do
   context 'when installing on CentOS 6.6' do
-    let(:chef_run) { ChefSpec::ServerRunner.new(platform: 'centos', version: '6.6').converge(described_recipe) }
+    let(:chef_run) do
+      ChefSpec::ServerRunner.new(platform: 'centos', version: '6.6') do |node|
+        node.set['ratpoison']['rpm']['file'] = 'some_dir/ratpoison.rpm'
+        node.set['ratpoison']['rpm']['url']  = 'https://copr-be.cloud.fedoraproject.org/results/shassard/ratpoison/epel-7-x86_64/ratpoison-1.4.8-1.el7.centos/ratpoison-1.4.8-1.el7.centos.x86_64.rpm'
+      end.converge(described_recipe)
+    end
 
     it 'includes the yum-epel cookbook' do
       expect(chef_run).to include_recipe('yum-epel')
+    end
+
+    it 'does not download ratpoison rpm' do
+      expect(chef_run).not_to create_remote_file(chef_run.node['ratpoison']['rpm']['file'])
     end
 
     it 'installs package retpoison' do
