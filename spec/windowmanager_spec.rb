@@ -55,7 +55,8 @@ describe 'ratpoison::windowmanager' do
   context 'when installing on CentoOS 7.1' do
     let(:chef_run) do
       ChefSpec::ServerRunner.new(platform: 'centos', version: '7.1.1503') do |node|
-        node.set['ratpoison']['rpm']['url'] = 'https://copr-be.cloud.fedoraproject.org/results/shassard/ratpoison/epel-7-x86_64/ratpoison-1.4.8-1.el7.centos/ratpoison-1.4.8-1.el7.centos.x86_64.rpm'
+        node.set['ratpoison']['rpm']['file'] = 'some_dir/ratpoison.rpm'
+        node.set['ratpoison']['rpm']['url']  = 'https://copr-be.cloud.fedoraproject.org/results/shassard/ratpoison/epel-7-x86_64/ratpoison-1.4.8-1.el7.centos/ratpoison-1.4.8-1.el7.centos.x86_64.rpm'
       end.converge(described_recipe)
     end
 
