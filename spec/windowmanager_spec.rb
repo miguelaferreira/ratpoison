@@ -18,7 +18,6 @@
 require_relative 'spec_helper'
 
 describe 'ratpoison::windowmanager' do
-
   context 'when installing on CentOS 6.6' do
     let(:chef_run) { ChefSpec::ServerRunner.new(platform: 'centos', version: '6.6').converge(described_recipe) }
 
