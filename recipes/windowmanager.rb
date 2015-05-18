@@ -19,7 +19,13 @@
 
 include_recipe 'yum-epel'
 
-package 'ratpoison'
+remote_file node['ratpoison']['rpm']['file'] do
+  source node['ratpoison']['rpm']['url']
+end if node['platform_version'].to_i > 6
+
+package 'ratpoison' do
+  source node['ratpoison']['rpm']['file'] if node['platform_version'].to_i > 6
+end
 
 template '/etc/init.d/ratpoison' do
   source 'ratpoison.init.d.erb'

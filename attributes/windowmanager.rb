@@ -17,5 +17,8 @@
 # limitations under the License.
 #
 
+default['ratpoison']['rpm']['url']  = nil
+default['ratpoison']['rpm']['file'] = "#{Chef::Config[:file_cache_path]}/ratpoison.rpm"
+
 default['ratpoison']['display'] = ':0'
 default['ratpoison']['screen']  = '0'

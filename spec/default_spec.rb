@@ -15,18 +15,34 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-require 'chefspec'
 require_relative 'spec_helper'
 
 describe 'ratpoison::default' do
-  let(:chef_run) { ChefSpec::ServerRunner.new.converge(described_recipe) }
+  context 'when installing on CentOS 6.6' do
+    let(:chef_run) { ChefSpec::ServerRunner.new(platform: 'centos', version: '6.6').converge(described_recipe) }
 
-  it 'includes the xvfb cookbook' do
-    expect(chef_run).to include_recipe('xvfb')
+    it 'includes the xvfb cookbook' do
+      expect(chef_run).to include_recipe('xvfb')
+    end
+
+    it 'includes the ratpoison::windowmanager recipe' do
+      expect(chef_run).to include_recipe('ratpoison::windowmanager')
+    end
   end
 
-  it 'includes the ratpoison::windowmanager recipe' do
-    expect(chef_run).to include_recipe('ratpoison::windowmanager')
+  context 'when installing on CentoOS 7.1' do
+    let(:chef_run) do
+      ChefSpec::ServerRunner.new(platform: 'centos', version: '7.1.1503') do |node|
+        node.set['ratpoison']['rpm']['url'] = 'https://copr-be.cloud.fedoraproject.org/results/shassard/ratpoison/epel-7-x86_64/ratpoison-1.4.8-1.el7.centos/ratpoison-1.4.8-1.el7.centos.x86_64.rpm'
+      end.converge(described_recipe)
+    end
+
+    it 'includes the xvfb cookbook' do
+      expect(chef_run).to include_recipe('xvfb')
+    end
+
+    it 'includes the ratpoison::windowmanager recipe' do
+      expect(chef_run).to include_recipe('ratpoison::windowmanager')
+    end
   end
 end

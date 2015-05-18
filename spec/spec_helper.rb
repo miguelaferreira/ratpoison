@@ -20,11 +20,7 @@ require 'chefspec'
 require 'chefspec/berkshelf'
 require 'simplecov'
 
-SimpleCov.start do
-  add_filter '/test/'
-end
-
-RSpec.configure do |config|
-  config.platform = 'centos'
-  config.version  = '6.6'
+ChefSpec::Coverage.start! do
+  add_filter 'vendor/'
+  add_filter 'test/'
 end
