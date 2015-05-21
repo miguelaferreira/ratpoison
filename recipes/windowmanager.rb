@@ -36,7 +36,7 @@ template '/etc/init.d/ratpoison' do
     template_file: source.to_s,
     recipe_file:   (__FILE__).to_s.split('cookbooks/').last
   )
-  notifies(:restart, 'service[ratpoison]')
+  notifies :restart, 'service[ratpoison]', :delayed
 end
 
 service 'ratpoison' do
