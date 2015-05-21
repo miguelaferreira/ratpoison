@@ -1,6 +1,8 @@
 #!/bin/bash -x
 
-bundle install --path vendor/bundle
+rm -f Berksfile.lock Gemfile.lock
+
+bundle install --path vendor/bundle --binstubs vendor/bin
 
 bundle exec foodcritic .
 
