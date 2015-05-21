@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 group :development, :test do
-  gem 'berkshelf', github: 'berkshelf/berkshelf'
+  gem 'berkshelf', git: 'https://github.com/berkshelf/berkshelf'
   gem 'foodcritic', '>= 3.0'
   gem 'chefspec',   '>= 3.1'
   gem 'rubocop'
@@ -9,7 +9,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'vagrant', github: 'mitchellh/vagrant'
+  gem 'vagrant', git: 'https://github.com/mitchellh/vagrant'
   gem 'test-kitchen'
   gem 'kitchen-vagrant'
   gem 'kitchen-docker'
