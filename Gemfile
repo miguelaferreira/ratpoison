@@ -9,7 +9,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'vagrant', git: 'https://github.com/mitchellh/vagrant'
   gem 'test-kitchen'
   gem 'kitchen-vagrant'
   gem 'kitchen-docker'
